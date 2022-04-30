@@ -1,22 +1,29 @@
 
+const dishModel = require("../models/dishModel");
+const dishDB = new dishModel();
+dishDB.init();
+
 exports.root = function(req, res) {
-    res.send("About Us.");
+    res.render("root", {
+        title: "Generic's"
+    });
 }
 
 exports.staff = function(req, res) {
-    res.send("Staff Login.");
+    res.send("Staff Login");
 }
 
 exports.menus = function(req, res) {
-    res.send("Main, dessert, special. Lunch, dinner.")
+    res.send("Main, dessert, special. Lunch, dinner.");
+    dishDB.getTypeDishes("main");
 }
 
 exports.newDish = function(req, res) {
-    res.send("New dish.");
+    res.send("New dish");
 }
 
 exports.editDish = function(req, res) {
-    res.send("Edit.");
+    res.send("Edit");
 }
 
 // errors
