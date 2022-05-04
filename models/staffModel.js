@@ -7,8 +7,10 @@ class Staff {
             this.db = new nedb({ filename: path, autoload: true });
             console.log("[DEV] Staff Database connected to " + path);
         }
-        else
+        else {
             this.db = new nedb();
+            console.log("[DEV] Staff Database running in-memory");
+        }
     }
 
     init() {

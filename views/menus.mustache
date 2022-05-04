@@ -1,0 +1,11 @@
+<html>
+    <header>{{>header}}</header>
+    <body>
+        <h1>Menus</h1>
+        <h2>Starters</h2> {{#starter}}{{>dish}}{{/starter}}
+        <h2>Main courses</h2> {{#main}}{{>dish}}{{/main}}
+        <h2>Drinks</h2>{{#drink}}{{>dish}}{{/drink}}
+        <h2>Lunch</h2>{{#lunch}}{{>dish}}{{/lunch}}
+        <h2>Dinner</h2>{{#dinner}}{{>dish}}{{/dinner}}
+    </body>
+</html>

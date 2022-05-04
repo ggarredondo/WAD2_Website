@@ -1,7 +1,6 @@
 
 const dishModel = require("../models/dishModel");
-const dishDB = new dishModel();
-dishDB.init();
+const dishDB = new dishModel("database/dish.db");
 
 exports.root = function(req, res) {
     res.render("root", {
@@ -13,9 +12,15 @@ exports.staff = function(req, res) {
     res.send("Staff Login");
 }
 
-exports.menus = function(req, res) {
-    res.send("Main, dessert, special. Lunch, dinner.");
-    dishDB.getTypeDishes("main");
+exports.menus = async function(req, res) {
+    res.render("menus", {
+        title: "Generic's Menus",
+        starter: await dishDB.getTypeDishes("starter").then((list) => {return list;}),
+        main: await dishDB.getTypeDishes("main").then((list) => {return list;}),
+        drink: await dishDB.getTypeDishes("starter").then((list) => {return list;}),
+        lunch: await dishDB.getTypeDishes("lunch").then((list) => {return list;}),
+        dinner: await dishDB.getTypeDishes("dinner").then((list) => {return list;})
+    })
 }
 
 exports.newDish = function(req, res) {

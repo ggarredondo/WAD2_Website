@@ -7,19 +7,10 @@ class Dish {
             this.db = new nedb({ filename: path, autoload: true });
             console.log("[DEV] Dish Database connected to " + path);
         }
-        else
+        else {
             this.db = new nedb();
-    }
-    
-    init() {
-        this.db.insert({
-            name: "carbonara spaghetti",
-            ingredients: "egg, cream, bacon, spaghetti",
-            allergy_advice: "lactose",
-            price: "10",
-            available: "yes",
-            type: "main"
-        });
+            console.log("[DEV] Dish Database running in-memory");
+        }
     }
 
     getAllDishes() {
@@ -29,7 +20,7 @@ class Dish {
                     reject(err);
                 else {
                     resolve(dishes);
-                    console.log("[DEV] all dishes: ", dishes);
+                    console.log("[DEV] returned all dishes");
                 }
             });
         });
@@ -42,7 +33,7 @@ class Dish {
                     reject(err);
                 else {
                     resolve(dishes);
-                    console.log(_type, "[DEV] dishes: ", dishes);
+                    console.log("[DEV] returned ", _type, "dishes");
                 }
             });
         });
