@@ -9,12 +9,14 @@ exports.root = function(req, res) {
 }
 
 exports.staff = function(req, res) {
-    res.send("Staff Login");
+    res.render("staff",{
+        title: "Generic's Staff"
+    })
 }
 
-exports.menus = async function(req, res) {
-    res.render("menus", {
-        title: "Generic's Menus",
+exports.menu = async function(req, res) {
+    res.render("menu", {
+        title: "Generic's Menu",
         starter: await dishDB.getTypeDishes("starter").then((list) => {return list;}),
         main: await dishDB.getTypeDishes("main").then((list) => {return list;}),
         drink: await dishDB.getTypeDishes("starter").then((list) => {return list;}),
@@ -27,8 +29,8 @@ exports.newDish = function(req, res) {
     res.send("New dish");
 }
 
-exports.editDish = function(req, res) {
-    res.send("Edit");
+exports.updateDish = function(req, res) {
+    res.send("Update");
 }
 
 // errors

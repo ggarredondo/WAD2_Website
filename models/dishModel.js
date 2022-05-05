@@ -1,14 +1,14 @@
 
-const nedb = require("nedb");
+const Datastore = require("nedb");
 
 class Dish {
     constructor(path) {
         if (path) {
-            this.db = new nedb({ filename: path, autoload: true });
+            this.db = new Datastore({ filename: path, autoload: true });
             console.log("[DEV] Dish Database connected to " + path);
         }
         else {
-            this.db = new nedb();
+            this.db = new Datastore();
             console.log("[DEV] Dish Database running in-memory");
         }
     }
@@ -33,7 +33,7 @@ class Dish {
                     reject(err);
                 else {
                     resolve(dishes);
-                    console.log("[DEV] returned ", _type, "dishes");
+                    console.log("[DEV] returned", _type, "dishes");
                 }
             });
         });

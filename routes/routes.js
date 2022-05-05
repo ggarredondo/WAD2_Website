@@ -4,11 +4,14 @@ const router = express.Router();
 const controller = require("../controllers/controller.js");
 
 router.get("/", controller.root);
-router.get("/staff", controller.staff);
-router.get("/menus", controller.menus);
+router.get("/menu", controller.menu);
 router.get("/newDish", controller.newDish);
-router.get("/editDish", controller.editDish);
+router.get("/updateDish", controller.updateDish);
 
+// login
+router.get("/staff", controller.staff);
+
+// errors
 router.use(controller.notfound_error);
 router.use(controller.internal_error);
 
