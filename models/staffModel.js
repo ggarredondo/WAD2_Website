@@ -34,8 +34,14 @@ class Staff {
                 position: _position
             }
             that.db.insert(entry, function(err) {
-                if (err) console.log("[DEV] Can't insert user", _username);
+                err ? console.log("[DEV] Can't insert user", _username) : console.log("[DEV] Inserted user", _username);
             });
+        });
+    }
+
+    lookUp(_username, cb) {
+        this.db.find({username: _username}, function(err, user) {
+            return err || user.length == 0 ? cb(null, null) : cb(null, user[0]);
         });
     }
 }

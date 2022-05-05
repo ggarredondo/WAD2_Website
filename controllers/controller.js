@@ -2,16 +2,13 @@
 const dishModel = require("../models/dishModel");
 const dishDB = new dishModel("database/dish.db");
 
+const staffModel = require("../models/staffModel");
+const staffDB = new staffModel("database/staff.db");
+
 exports.root = function(req, res) {
     res.render("root", {
         title: "Generic's"
     });
-}
-
-exports.staff = function(req, res) {
-    res.render("staff",{
-        title: "Generic's Staff"
-    })
 }
 
 exports.menu = async function(req, res) {
@@ -22,7 +19,7 @@ exports.menu = async function(req, res) {
         drink: await dishDB.getTypeDishes("starter").then((list) => {return list;}),
         lunch: await dishDB.getTypeDishes("lunch").then((list) => {return list;}),
         dinner: await dishDB.getTypeDishes("dinner").then((list) => {return list;})
-    })
+    });
 }
 
 exports.newDish = function(req, res) {
@@ -31,6 +28,14 @@ exports.newDish = function(req, res) {
 
 exports.updateDish = function(req, res) {
     res.send("Update");
+}
+
+// login
+
+exports.staff = function(req, res) {
+    res.render("staff",{
+        title: "Generic's Staff"
+    })
 }
 
 // errors
