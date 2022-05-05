@@ -22,7 +22,7 @@ exports.login = function(req, res, next) {
                 //next();
             }
             else {
-                return res.render("staff", {
+                res.render("staff", {
                     title: "Generic's Staff",
                     pass_error: "y"
                 });
