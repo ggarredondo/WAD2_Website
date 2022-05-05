@@ -4,3 +4,4 @@
 {"name":"test lunch","ingredients":"ingredients","allergy_advice":"allergy","price":"10","available":"yes","type":"lunch","_id":"P06bOp8rM47vqf82"}
 {"name":"test main","ingredients":"ingredients","allergy_advice":"allergy","price":"10","available":"yes","type":"main","_id":"bmokTggCmLikfDmg"}
 {"name":"test dinner","ingredients":"ingredients","allergy_advice":"allergy","price":"10","available":"yes","type":"dinner","_id":"rS3HSVFdAuRxwCLx"}
+{"name":"test drink 2","ingredients":"ingredients","allergy_advice":"allergy","price":"10","available":"yes","type":"drink","_id":"sx1m80aJ6b1ejSDN"}

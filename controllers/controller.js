@@ -1,9 +1,5 @@
 
-const dishModel = require("../models/dishModel");
-const dishDB = new dishModel("database/dish.db");
-
-const staffModel = require("../models/staffModel");
-const staffDB = new staffModel("database/staff.db");
+const dishDAO = require("../models/dishModel");
 
 exports.root = function(req, res) {
     res.render("root", {
@@ -14,11 +10,11 @@ exports.root = function(req, res) {
 exports.menu = async function(req, res) {
     res.render("menu", {
         title: "Generic's Menu",
-        starter: await dishDB.getTypeDishes("starter").then((list) => {return list;}),
-        main: await dishDB.getTypeDishes("main").then((list) => {return list;}),
-        drink: await dishDB.getTypeDishes("starter").then((list) => {return list;}),
-        lunch: await dishDB.getTypeDishes("lunch").then((list) => {return list;}),
-        dinner: await dishDB.getTypeDishes("dinner").then((list) => {return list;})
+        starter: await dishDAO.getTypeDishes("starter").then((list) => {return list;}),
+        main: await dishDAO.getTypeDishes("main").then((list) => {return list;}),
+        drink: await dishDAO.getTypeDishes("drink").then((list) => {return list;}),
+        lunch: await dishDAO.getTypeDishes("lunch").then((list) => {return list;}),
+        dinner: await dishDAO.getTypeDishes("dinner").then((list) => {return list;})
     });
 }
 

@@ -46,4 +46,5 @@ class Staff {
     }
 }
 
-module.exports = Staff;
+const staffDAO = new staffModel("database/staff.db");
+module.exports = staffDAO;

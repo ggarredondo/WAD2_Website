@@ -40,4 +40,5 @@ class Dish {
     }
 }
 
-module.exports = Dish;
+const dishDAO = new Dish("database/dish.db");
+module.exports = dishDAO;
