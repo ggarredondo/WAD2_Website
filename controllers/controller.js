@@ -29,9 +29,9 @@ exports.updateDish = function(req, res) {
 // login
 
 exports.staff = function(req, res) {
-    res.render("staff",{
+    res.render("staff", {
         title: "Generic's Staff"
-    })
+    });
 }
 
 // errors

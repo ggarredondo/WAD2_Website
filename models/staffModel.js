@@ -41,10 +41,16 @@ class Staff {
 
     lookUp(_username, cb) {
         this.db.find({username: _username}, function(err, user) {
-            return err || user.length == 0 ? cb(null, null) : cb(null, user[0]);
+            if (err || user.length == 0) {
+                if (err) console.log("[DEV] Error looking up user", _username);
+                else if (user.length == 0) console.log("[DEV] Couldn't find user", _username);
+                return cb(err, null);
+            }
+            else
+                return cb(err, user[0]);
         });
     }
 }
 
-const staffDAO = new staffModel("database/staff.db");
+const staffDAO = new Staff("database/staff.db");
 module.exports = staffDAO;

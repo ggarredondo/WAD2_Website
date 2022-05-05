@@ -3,9 +3,15 @@
     <body>
         <h2>Staff Login</h2>
         <form method="POST" action="/staff">
-            <input type="text" id="username" name="username" placeholder="Username..."><br>
-            <input type="text" id="password" name="password" placeholder="Password..."><br>
+            <input type="text" id="username" name="username" placeholder="Username..." required><br>
+            <input type="password" id="password" name="password" placeholder="Password..." required><br>
             <input type="submit" value="Submit">
         </form>
+        {{#name_error}}
+            <strong>There is no user by that name...</strong>
+        {{/name_error}}
+        {{#pass_error}}
+            <strong>The password is incorrect...</strong>
+        {{/pass_error}}
     </body>
 </html>
