@@ -1,5 +1,5 @@
 # Web Application Development 2 - Website
-<br/><br/>
+<br/>
 How to run the site:<br/>
 -Install npm package manager in the OS.<br/>
 -Open a terminal window located in the cloned folder.<br/>
