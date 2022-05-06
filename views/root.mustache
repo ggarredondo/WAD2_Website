@@ -1,12 +1,12 @@
 <html>
     <header>{{>header}}</header>
     <body>
-        {{^user}}
+        {{^jwt}}
             <div align="right"><a href="/staff">Staff</a></div>
-        {{/user}}
-        {{#user}}
+        {{/jwt}}
+        {{#jwt}}
             <div align="right"><a href="/logout">Log out</a></div>
-        {{/user}}
+        {{/jwt}}
         Booking<br>
         <a href="/menu">Menu</a>
         <br>About Us

@@ -4,27 +4,51 @@ const dishDAO = require("../models/dishModel");
 exports.root = function(req, res) {
     res.render("root", {
         title: "Generic's",
-        user: req.cookies.jwt
+        jwt: req.cookies.jwt
     });
 }
 
 exports.menu = async function(req, res) {
     res.render("menu", {
         title: "Generic's Menu",
-        starter: await dishDAO.getTypeDishes("starter").then((list) => {return list;}),
-        main: await dishDAO.getTypeDishes("main").then((list) => {return list;}),
-        drink: await dishDAO.getTypeDishes("drink").then((list) => {return list;}),
-        lunch: await dishDAO.getTypeDishes("lunch").then((list) => {return list;}),
-        dinner: await dishDAO.getTypeDishes("dinner").then((list) => {return list;})
+        starter: await dishDAO.getTypeDishes("starter", true).then((list) => {return list;}),
+        main: await dishDAO.getTypeDishes("main", true).then((list) => {return list;}),
+        drink: await dishDAO.getTypeDishes("drink", true).then((list) => {return list;}),
+        lunch: await dishDAO.getTypeDishes("lunch", true).then((list) => {return list;}),
+        dinner: await dishDAO.getTypeDishes("dinner", true).then((list) => {return list;}),
+        unavailable: await dishDAO.getAllDishes(false).then((list) => {return list;}),
+        jwt: req.cookies.jwt
     });
 }
 
 exports.newDish = function(req, res) {
-    res.send("New dish");
+    res.render("newDish", {
+        title: "Generic's New Dish"
+    })
+}
+
+exports.post_newDish = function(req, res) {
+    dishDAO.insertDish(req.body.name, 
+                    req.body.ingredients, 
+                    req.body.allergy_advice,
+                    req.body.price,
+                    req.body.type,
+                    req.body.available);
+    res.redirect("/menu");
 }
 
 exports.updateDish = function(req, res) {
     res.send("Update");
+}
+
+exports.availDish = function(req, res) {
+    dishDAO.avail(req.url.substring(7,req.url.length), true);
+    res.redirect("/menu");
+}
+
+exports.unavailDish = function(req, res) {
+    dishDAO.avail(req.url.substring(9,req.url.length), false);
+    res.redirect("/menu");
 }
 
 // login

@@ -3,5 +3,14 @@
     <strong>ingredients: </strong> {{ingredients}}<br>
     <strong>allergy: </strong> {{allergy_advice}}<br>
     <strong>price: </strong> {{price}}<br>
+    {{#jwt}}
+        <button>Edit</button>
+        {{^available}}
+            <a href="/avail/{{_id}}"><button>Make available</button></a>
+        {{/available}}
+        {{#available}}
+            <a href="/unavail/{{_id}}"><button>Make unavailable</button></a>
+        {{/available}}
+    {{/jwt}}
 </p>
 <br>

@@ -1,11 +1,17 @@
 <html>
     <header>{{>header}}</header>
     <body>
+        {{#jwt}}
+            <div align="right">
+                <a href="/newDish"><button type="button">New dish</button></a>
+            </div>
+        {{/jwt}}
         <h1>Menu</h1>
         <h2>Starters</h2> {{#starter}}{{>dish}}{{/starter}}
         <h2>Main courses</h2> {{#main}}{{>dish}}{{/main}}
         <h2>Drinks</h2>{{#drink}}{{>dish}}{{/drink}}
         <h2>Lunch</h2>{{#lunch}}{{>dish}}{{/lunch}}
         <h2>Dinner</h2>{{#dinner}}{{>dish}}{{/dinner}}
+        {{#jwt}}<h2>Unavailable</h2>{{#unavailable}}{{>dish}}{{/unavailable}}{{/jwt}}
     </body>
 </html>

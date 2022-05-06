@@ -20,7 +20,7 @@ exports.login = function(req, res, next) {
         }
         bcrypt.compare(password, user.password, function(err, result) {
             if (result) {
-                let accessToken = jwt.sign({username: username}, process.env.ACCESS_TOKEN_SECRET, {expiresIn: 300});
+                let accessToken = jwt.sign({username: username}, process.env.ACCESS_TOKEN_SECRET, {expiresIn: 600});
                 res.cookie("jwt", accessToken);
                 next();
             }
@@ -38,14 +38,17 @@ exports.verify = function(req, res, next) {
     let accessToken = req.cookies.jwt;
     if (!accessToken) {
         console.log("[DEV] No access token");
-        return res.status(402).send();
+        return res.status(402).send("Only staff can access this page.");
     }
     try {
         jwt.verify(accessToken, process.env.ACCESS_TOKEN_SECRET);
         next();
     }
     catch (err) {
-        console.log("[DEV] Error verifying user");
-        res.status(401).send();
+        console.log("[DEV] Error verifying user. JWT likely expired. User has been logged out.");
+        res
+            .clearCookie("jwt")
+            .status(401)
+            .redirect("/");
     }
 }

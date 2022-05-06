@@ -1,0 +1,18 @@
+<html>
+    <header>{{>header}}</header>
+    <body>
+        <h2>New Dish</h2>
+        <form method="POST" action="/newDish">
+            <input type="text" id="name" name="name" placeholder="Name..." value="{{dname}}" required><br>
+            <input type="text" id="ingredients" name="ingredients" placeholder="Ingredients..." value="{{dingredients}}" required><br>
+            <input type="text" id="allergy_advice" name="allergy_advice" placeholder="Allergens..." value="{{dallergy}}" required><br>
+            <input type="number" id="price" name="price" placeholder="Price..." value="{{dprice}}" required><br>
+            <input type="text" id="type" name="type" placeholder="Type..." value="{{dtype}}" required><br>
+            <input type="radio" id="available" name="available" value="yes" required>
+            <label for="available">Available</label>
+            <input type="radio" id="unavailable" name="available" value="no" required>
+            <label for="unavailable">Unavailable</label><br>
+            <input type="submit" value="Submit">
+        </form>
+    </body>
+</html>

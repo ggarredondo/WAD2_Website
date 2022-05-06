@@ -8,7 +8,10 @@ const {verify} = require("../auth/auth");
 router.get("/", controller.root);
 router.get("/menu", controller.menu);
 router.get("/newDish", verify, controller.newDish);
+router.post("/newDish", verify, controller.post_newDish);
 router.get("/updateDish", verify, controller.updateDish);
+router.get("/avail/:_id", verify, controller.availDish);
+router.get("/unavail/:_id", verify, controller.unavailDish);
 
 // login
 router.get("/staff", controller.staff);
