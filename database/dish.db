@@ -12,3 +12,9 @@
 {"name":"test dinner","ingredients":"ingredients","allergy_advice":"allergy","price":"10","type":"dinner","available":true,"_id":"rS3HSVFdAuRxwCLx"}
 {"name":"test drink 2","ingredients":"ingredients","allergy_advice":"allergy","price":"10","type":"drink","available":true,"_id":"sx1m80aJ6b1ejSDN"}
 {"name":"test starter 2","ingredients":"ingredients","allergy_advice":"allergy","price":"10","type":"starter","available":false,"_id":"tnGMeg42QhH1Mhpl"}
+{"name":"test starter","ingredients":"tomato, bacon","allergy_advice":"gluten","price":"20","type":"starter","available":true,"_id":"Mp2zYl9X3QlHjoUW"}
+{"name":"test main 2","ingredients":"cream, egg","allergy_advice":"gluten, egg, nuts","price":"10","type":"main","available":true,"_id":"52OqyCbk9N6Z9IeC"}
+{"name":"test main","ingredients":"beef, lettuce","allergy_advice":"nuts","price":"10","type":"main","available":true,"_id":"bmokTggCmLikfDmg"}
+{"name":"coca-cola","ingredients":".","allergy_advice":".","price":"2","type":"drink","available":true,"_id":"4PQjurhUxtYWDuDu"}
+{"name":"beer","ingredients":".","allergy_advice":".","price":"2","type":"drink","available":true,"_id":"sx1m80aJ6b1ejSDN"}
+{"name":"test special","ingredients":"pork, bread","allergy_advice":"gluten","price":"7","type":"special","available":true,"_id":"Vc98KFAmqIeF0F2O"}
