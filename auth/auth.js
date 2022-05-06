@@ -8,6 +8,10 @@ exports.login = function(req, res, next) {
     let password = req.body.password;
 
     staffDAO.lookUp(username, function(err, user) {
+        if (err) {
+            console.log("[DEV] Error looking up user", username);
+            res.status(401).send();
+        }
         if (!user) {
             return res.render("staff", {
                 title: "Generic's Staff",
@@ -16,10 +20,9 @@ exports.login = function(req, res, next) {
         }
         bcrypt.compare(password, user.password, function(err, result) {
             if (result) {
-                res.send("VICTORY ROYALE");
-                //let accessToken = jwt.sign({username: username}, process.env.ACCESS_TOKEN_SECRET, {expiresIn: 300});
-                //res.cookie("jwt", accessToken);
-                //next();
+                let accessToken = jwt.sign({username: username}, process.env.ACCESS_TOKEN_SECRET, {expiresIn: 300});
+                res.cookie("jwt", accessToken);
+                next();
             }
             else {
                 res.render("staff", {
@@ -28,5 +31,21 @@ exports.login = function(req, res, next) {
                 });
             }
         });
-    });
+    });   
+}
+
+exports.verify = function(req, res, next) {
+    let accessToken = req.cookies.jwt;
+    if (!accessToken) {
+        console.log("[DEV] No access token");
+        return res.status(402).send();
+    }
+    try {
+        jwt.verify(accessToken, process.env.ACCESS_TOKEN_SECRET);
+        next();
+    }
+    catch (err) {
+        console.log("[DEV] Error verifying user");
+        res.status(401).send();
+    }
 }

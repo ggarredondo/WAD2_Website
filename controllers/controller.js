@@ -3,7 +3,8 @@ const dishDAO = require("../models/dishModel");
 
 exports.root = function(req, res) {
     res.render("root", {
-        title: "Generic's"
+        title: "Generic's",
+        user: req.cookies.jwt
     });
 }
 
@@ -32,6 +33,17 @@ exports.staff = function(req, res) {
     res.render("staff", {
         title: "Generic's Staff"
     });
+}
+
+exports.logout = function(req, res) {
+    res
+        .clearCookie("jwt")
+        .status(200)
+        .redirect("/");
+}
+
+exports.post_login = function(req, res) {
+    res.redirect("/");
 }
 
 // errors

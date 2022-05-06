@@ -1,7 +1,12 @@
 <html>
     <header>{{>header}}</header>
     <body>
-        <div align="right"><a href="/staff">Staff</a></div>
+        {{^user}}
+            <div align="right"><a href="/staff">Staff</a></div>
+        {{/user}}
+        {{#user}}
+            <div align="right"><a href="/logout">Log out</a></div>
+        {{/user}}
         Booking<br>
         <a href="/menu">Menu</a>
         <br>About Us
