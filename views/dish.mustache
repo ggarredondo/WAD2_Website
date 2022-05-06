@@ -1,8 +1,8 @@
-<p> 
-    <strong>name: </strong> {{name}}<br>
-    <strong>ingredients: </strong> {{ingredients}}<br>
-    <strong>allergy: </strong> {{allergy_advice}}<br>
-    <strong>price: </strong> {{price}}<br>
+<p class="w3-text-grey" style="line-height: 1.2; margin-left: 40px;"> 
+    <strong>{{name}}</strong><br>
+    {{ingredients}}<br>
+    {{allergy_advice}}<br>
+    {{price}} £<br>
     {{#jwt}}
         <a href="/update/{{_id}}"><button>Edit</button></a>
         {{^available}}

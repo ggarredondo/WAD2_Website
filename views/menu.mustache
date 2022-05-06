@@ -1,17 +1,22 @@
 <html>
     <header>{{>header}}</header>
     <body>
-        {{#jwt}}
-            <div align="right">
-                <a href="/newDish"><button type="button">New dish</button></a>
-            </div>
-        {{/jwt}}
-        <h1>Menu</h1>
-        <h2>Starters</h2> {{#starter}}{{>dish}}{{/starter}}
-        <h2>Main courses</h2> {{#main}}{{>dish}}{{/main}}
-        <h2>Drinks</h2>{{#drink}}{{>dish}}{{/drink}}
-        <h2>Lunch</h2>{{#lunch}}{{>dish}}{{/lunch}}
-        <h2>Dinner</h2>{{#dinner}}{{>dish}}{{/dinner}}
-        {{#jwt}}<h2>Unavailable</h2>{{#unavailable}}{{>dish}}{{/unavailable}}{{/jwt}}
+        {{>navbar}}
+
+        <!-- Header -->
+        <header class="w3-display-container w3-content w3-wide" style="max-width:1600px;min-width:500px" id="home">
+            <img class="w3-image" src="https://themanufacturer-cdn-1.s3.eu-west-2.amazonaws.com/wp-content/uploads/2018/02/14122603/foodanddrink--e1592221925712.jpg" width="1600" height="800">
+        
+        {{#jwt}}<br><br><a href="/newDish"><button type="button">Add new dish</button></a><br><br>{{/jwt}}
+
+        <p style="margin-left: 20px;font-size: 26px;">Starters</p> {{#starter}}{{>dish}}{{/starter}}
+        <p style="margin-left: 20px;font-size: 26px;">Main courses</p> {{#main}}{{>dish}}{{/main}}
+        <p style="margin-left: 20px;font-size: 26px;">Drinks</p> {{#drink}}{{>dish}}{{/drink}}
+        <p style="margin-left: 20px;font-size: 26px;">Special</p> {{#special}}{{>dish}}{{/special}}
+        <p style="margin-left: 20px;font-size: 26px;">Lunch</p> {{#lunch}}{{>dish}}{{/lunch}}
+        <p style="margin-left: 20px;font-size: 26px;">Dinner</p> {{#dinner}}{{>dish}}{{/dinner}}
+        <p style="margin-left: 20px;font-size: 26px;">{{#jwt}}Unavailable{{#unavailable}}</p> {{>dish}}{{/unavailable}}{{/jwt}}
+
+        {{>footer}}
     </body>
 </html>

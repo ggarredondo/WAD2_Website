@@ -15,6 +15,7 @@ exports.menu = async function(req, res) {
         starter: await dishDAO.getTypeDishes("starter", true).then((list) => {return list;}),
         main: await dishDAO.getTypeDishes("main", true).then((list) => {return list;}),
         drink: await dishDAO.getTypeDishes("drink", true).then((list) => {return list;}),
+        special: await dishDAO.getTypeDishes("special", true).then((list) => {return list;}),
         lunch: await dishDAO.getTypeDishes("lunch", true).then((list) => {return list;}),
         dinner: await dishDAO.getTypeDishes("dinner", true).then((list) => {return list;}),
         unavailable: await dishDAO.getAllDishes(false).then((list) => {return list;}),

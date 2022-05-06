@@ -1,14 +1,49 @@
 <html>
     <header>{{>header}}</header>
     <body>
-        {{^jwt}}
-            <div align="right"><a href="/staff">Staff</a></div>
-        {{/jwt}}
-        {{#jwt}}
-            <div align="right"><a href="/logout">Log out</a></div>
-        {{/jwt}}
-        Booking<br>
-        <a href="/menu">Menu</a>
-        <br>About Us
+        {{>navbar}}
+
+        <!-- Header -->
+        <header class="w3-display-container w3-content w3-wide" style="max-width:1600px;min-width:500px" id="home">
+            <img class="w3-image" src="https://visitbath.co.uk/imageresizer/?image=%2Fdbimgs%2FGallery%20-%20Abbey%20Hotel%20Food%20Spread%20Landscape.jpg&action=FeaturedItemsGalleryProElite3x2" width="1600" height="800">
+        
+        <!-- About -->
+        <div class="w3-row w3-padding-64" id="about">
+            <div class="w3-col m6 w3-padding-large">
+                <hr>
+                <img src="https://www.thebalancesmb.com/thmb/hjFuqpgtcnfibG96EqwfO3thrRA=/3435x2576/smart/filters:no_upscale()/overhead-view-of-smiling-female-friends-sharing-lunch-in-restaurant-928010348-5b4abe8f46e0fb003712c478.jpg" class="w3-round w3-image w3-opacity-min" alt="Table Setting" width="600" height="750">
+            </div>
+
+            <div class="w3-col m6 w3-padding-large">
+                <h1 class="w3-center">About Generic's</h1><br>
+                <h5 class="w3-center">Tradition since 1783</h5>
+                <p class="w3-large">Welcome to Generic's, your number one source for high quality meals. We're dedicated to providing you the very best of dishes, with an emphasis on fresh, seasonal <span class="w3-tag w3-light-grey">ingredients</span>. Founded in 1983 by Sir Valea, Generic's has come a long way from its beginnings in Newcastle. When Sir Valea first started out, his passion for cuisine drove him to start their own business. We hope you enjoy our dishes as much as we enjoy offering them to you.</p>
+                <p class="w3-large w3-text-grey w3-hide-medium">We care just as much about our served food as our clients. We want them to have a pleasant and fulfilling time with their friends or family everytime they come to our restaurant. We work hard to ensure the restaurant provides not only the right quality of food but the proper ambience to allow for those times of peace and humanity.</p>
+            </div>
+        </div>
+
+        <hr>
+  
+        <!-- Info Section -->
+        <div class="w3-row w3-padding-64" id="menu">
+            <div class="w3-col l6 w3-padding-large">
+                <h1 class="w3-center">Our addresses and contact</h1><br>
+                <p>
+                    975 Richmond Road GLOUCESTER GL75 2DZ<br>
+                    96 Queens Road NOTTINGHAN NG88 6FC<br><br>
+                </p>
+                <p class="w3-text-grey">
+                    070 7838 6392<br>
+                    077 1709 7210<br>
+                    contact@generics.com<br>
+                </p>
+            </div>
+            
+            <div class="w3-col l6 w3-padding-large">
+                <img src="https://cdn.vox-cdn.com/thumbor/_xrAvUdF9XuPHMrhziq3kjXFuXI=/425x105:1891x1205/1200x675/filters:focal(425x105:1891x1205)/cdn.vox-cdn.com/uploads/chorus_image/image/48926127/2015-11-18-otium-012.0.0.jpg" class="w3-round w3-image w3-opacity-min" alt="Menu" style="width:100%">
+            </div>
+        </div>
+
+        {{>footer}}
     </body>
 </html>

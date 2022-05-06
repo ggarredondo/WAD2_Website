@@ -1,0 +1,11 @@
+<div class="w3-top">
+    <div class="w3-bar w3-white w3-padding w3-card" style="letter-spacing:4px;">
+        <a href="/" class="w3-bar-item w3-button">Generic's Restaurant</a>
+        <div class="w3-right">
+            <a href="/menu" class="w3-bar-item w3-button">Menu</a>
+            <div class="w3-bar-item w3-button">Book</div>
+            {{^jwt}}<a href="/staff" class="w3-bar-item w3-button">Staff</a>{{/jwt}}
+            {{#jwt}}<a href="/logout" class="w3-bar-item w3-button">Log out</a>{{/jwt}}
+        </div>
+    </div>
+</div>

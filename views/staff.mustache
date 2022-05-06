@@ -1,7 +1,12 @@
 <html>
     <header>{{>header}}</header>
     <body>
-        <h2>Staff Login</h2>
+        <div class="w3-top">
+            <div class="w3-bar w3-white w3-padding w3-card" style="letter-spacing:4px;">
+                <a href="/" class="w3-bar-item w3-button">Generic's Restaurant</a>
+            </div>
+        </div><hr><hr>
+
         <form method="POST" action="/staff">
             <input type="text" id="username" name="username" placeholder="Username..." pattern="[a-zA-Z0-9]+" required><br>
             <input type="password" id="password" name="password" placeholder="Password..." pattern="[a-zA-Z0-9]+" required><br>
@@ -13,5 +18,7 @@
         {{#pass_error}}
             <strong>The password is incorrect...</strong>
         {{/pass_error}}
+
+        {{>footer}}
     </body>
 </html>
