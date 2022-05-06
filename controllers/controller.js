@@ -1,4 +1,5 @@
 
+const { render } = require("express/lib/response");
 const dishDAO = require("../models/dishModel");
 
 exports.root = function(req, res) {
@@ -38,7 +39,23 @@ exports.post_newDish = function(req, res) {
 }
 
 exports.updateDish = function(req, res) {
-    res.send("Update");
+    dishDAO.getDish(req.url.substring(8, req.url.length)).then((list) => {
+        res.render("updateDish", {
+            title: "Generic's Update Dish",
+            dish: list
+        })
+    });
+}
+
+exports.post_updateDish = function(req, res) {
+    dishDAO.updateDish(req.url.substring(8, req.url.length),
+                    req.body.name,
+                    req.body.ingredients, 
+                    req.body.allergy_advice,
+                    req.body.price,
+                    req.body.type,
+                    req.body.available);
+    res.redirect("/menu");
 }
 
 exports.availDish = function(req, res) {

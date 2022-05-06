@@ -9,7 +9,8 @@ router.get("/", controller.root);
 router.get("/menu", controller.menu);
 router.get("/newDish", verify, controller.newDish);
 router.post("/newDish", verify, controller.post_newDish);
-router.get("/updateDish", verify, controller.updateDish);
+router.get("/update/:_id", verify, controller.updateDish);
+router.post("/update/:_id", verify, controller.post_updateDish);
 router.get("/avail/:_id", verify, controller.availDish);
 router.get("/unavail/:_id", verify, controller.unavailDish);
 

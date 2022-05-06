@@ -1,0 +1,20 @@
+<html>
+    <header>{{>header}}</header>
+    <body>
+        <h2>Edit dish</h2>
+        {{#dish}}
+        <form method="POST" action="/update/{{_id}}">
+            <input type="text" id="name" name="name" value="{{name}}" required><br>
+            <input type="text" id="ingredients" name="ingredients" value="{{ingredients}}" required><br>
+            <input type="text" id="allergy_advice" name="allergy_advice" value="{{allergy_advice}}" required><br>
+            <input type="number" id="price" name="price" value="{{price}}" required><br>
+            <input type="text" id="type" name="type" value="{{type}}" required><br>
+            <input type="radio" id="available" name="available" value="true" required>
+            <label for="available">Available</label>
+            <input type="radio" id="unavailable" name="available" value="false" required>
+            <label for="unavailable">Unavailable</label><br>
+            <input type="submit" value="Submit">
+        </form>
+        {{/dish}}
+    </body>
+</html>

@@ -1,32 +1,15 @@
 {"name":"test drink 3","ingredients":"ingredients","allergy_advice":"allergy","price":"10","type":"drink","available":false,"_id":"3zbq5xw4v0wmfsZQ"}
 {"name":"test drink","ingredients":"ingredients","allergy_advice":"allergy","price":"10","type":"drink","available":true,"_id":"4PQjurhUxtYWDuDu"}
-{"name":"test main 2","ingredients":"ingredients","allergy_advice":"allergy","price":"10","type":"main","available":false,"_id":"52OqyCbk9N6Z9IeC"}
-{"name":"test starter","ingredients":"ingredients","allergy_advice":"allergy","price":"10","type":"starter","available":true,"_id":"Mp2zYl9X3QlHjoUW"}
-{"name":"test lunch","ingredients":"ingredients","allergy_advice":"allergy","price":"10","type":"lunch","available":true,"_id":"P06bOp8rM47vqf82"}
-{"name":"test main 3","ingredients":"ingredients","allergy_advice":"allergy","price":"10","type":"main","available":true,"_id":"P2aQD5VaQfM5AoaO"}
-{"name":"test main","ingredients":"ingredients","allergy_advice":"allergy","price":"10","type":"main","available":true,"_id":"bmokTggCmLikfDmg"}
-{"name":"test dinner","ingredients":"ingredients","allergy_advice":"allergy","price":"10","type":"dinner","available":true,"_id":"rS3HSVFdAuRxwCLx"}
-{"name":"test drink 2","ingredients":"ingredients","allergy_advice":"allergy","price":"10","type":"drink","available":false,"_id":"sx1m80aJ6b1ejSDN"}
-{"name":"test starter 2","ingredients":"ingredients","allergy_advice":"allergy","price":"10","type":"starter","available":true,"_id":"tnGMeg42QhH1Mhpl"}
-{"name":"test starter","ingredients":"ingredients","allergy_advice":"allergy","price":"10","type":"starter","available":false,"_id":"Mp2zYl9X3QlHjoUW"}
-{"name":"test starter","ingredients":"ingredients","allergy_advice":"allergy","price":"10","type":"starter","available":true,"_id":"Mp2zYl9X3QlHjoUW"}
-{"name":"test starter 2","ingredients":"ingredients","allergy_advice":"allergy","price":"10","type":"starter","available":false,"_id":"tnGMeg42QhH1Mhpl"}
-{"name":"test starter","ingredients":"ingredients","allergy_advice":"allergy","price":"10","type":"starter","available":false,"_id":"Mp2zYl9X3QlHjoUW"}
-{"name":"test main 3","ingredients":"ingredients","allergy_advice":"allergy","price":"10","type":"main","available":false,"_id":"P2aQD5VaQfM5AoaO"}
-{"name":"test main","ingredients":"ingredients","allergy_advice":"allergy","price":"10","type":"main","available":false,"_id":"bmokTggCmLikfDmg"}
-{"name":"test drink","ingredients":"ingredients","allergy_advice":"allergy","price":"10","type":"drink","available":false,"_id":"4PQjurhUxtYWDuDu"}
-{"name":"test lunch","ingredients":"ingredients","allergy_advice":"allergy","price":"10","type":"lunch","available":false,"_id":"P06bOp8rM47vqf82"}
-{"name":"test dinner","ingredients":"ingredients","allergy_advice":"allergy","price":"10","type":"dinner","available":false,"_id":"rS3HSVFdAuRxwCLx"}
-{"name":"test drink 3","ingredients":"ingredients","allergy_advice":"allergy","price":"10","type":"drink","available":true,"_id":"3zbq5xw4v0wmfsZQ"}
-{"name":"test drink","ingredients":"ingredients","allergy_advice":"allergy","price":"10","type":"drink","available":true,"_id":"4PQjurhUxtYWDuDu"}
 {"name":"test main 2","ingredients":"ingredients","allergy_advice":"allergy","price":"10","type":"main","available":true,"_id":"52OqyCbk9N6Z9IeC"}
+{"name":"test dinner 2","ingredients":"ingredients","allergy_advice":"allergy","price":"10","type":"dinner","available":true,"_id":"7hWiRLdGP4dsFrro"}
+{"name":"test lunch 2","ingredients":"ingredients","allergy_advice":"allergy","price":"10","type":"lunch","available":true,"_id":"K3TD89VGd5tLGypW"}
 {"name":"test starter","ingredients":"ingredients","allergy_advice":"allergy","price":"10","type":"starter","available":true,"_id":"Mp2zYl9X3QlHjoUW"}
 {"name":"test lunch","ingredients":"ingredients","allergy_advice":"allergy","price":"10","type":"lunch","available":true,"_id":"P06bOp8rM47vqf82"}
-{"name":"test main 3","ingredients":"ingredients","allergy_advice":"allergy","price":"10","type":"main","available":true,"_id":"P2aQD5VaQfM5AoaO"}
+{"name":"test main 3","ingredients":"ingredients","allergy_advice":"allergy","price":"10","type":"main","available":false,"_id":"P2aQD5VaQfM5AoaO"}
 {"name":"test main","ingredients":"ingredients","allergy_advice":"allergy","price":"10","type":"main","available":true,"_id":"bmokTggCmLikfDmg"}
 {"name":"test dinner","ingredients":"ingredients","allergy_advice":"allergy","price":"10","type":"dinner","available":true,"_id":"rS3HSVFdAuRxwCLx"}
 {"name":"test drink 2","ingredients":"ingredients","allergy_advice":"allergy","price":"10","type":"drink","available":true,"_id":"sx1m80aJ6b1ejSDN"}
-{"name":"test starter 2","ingredients":"ingredients","allergy_advice":"allergy","price":"10","type":"starter","available":true,"_id":"tnGMeg42QhH1Mhpl"}
 {"name":"test starter 2","ingredients":"ingredients","allergy_advice":"allergy","price":"10","type":"starter","available":false,"_id":"tnGMeg42QhH1Mhpl"}
-{"name":"test main 3","ingredients":"ingredients","allergy_advice":"allergy","price":"10","type":"main","available":false,"_id":"P2aQD5VaQfM5AoaO"}
-{"name":"test drink 3","ingredients":"ingredients","allergy_advice":"allergy","price":"10","type":"drink","available":false,"_id":"3zbq5xw4v0wmfsZQ"}
+{"name":"test starter update","ingredients":"ingredients update","allergy_advice":"allergy update","price":"20","type":"lunch","available":false,"_id":"Mp2zYl9X3QlHjoUW"}
+{"name":"test starter update","ingredients":"ingredients update","allergy_advice":"allergy update","price":"20","type":"lunch","available":true,"_id":"Mp2zYl9X3QlHjoUW"}
+{"name":"test starter update","ingredients":"ingredients update","allergy_advice":"allergy update","price":"20","type":"starter","available":true,"_id":"Mp2zYl9X3QlHjoUW"}

@@ -27,10 +27,15 @@ class Dish {
     getTypeDishes(_type, _available) {
         return new Promise((resolve, reject) => {
             this.db.find({type: _type, available: _available}, function(err, dishes) {
-                if (err)
-                    reject(err);
-                else
-                    resolve(dishes);
+                err ? reject(err) : resolve(dishes);
+            });
+        });
+    }
+
+    getDish(id) {
+        return new Promise((resolve, reject) => {
+            this.db.find({_id: id}, function(err, dish) {
+                err ? reject(err) : resolve(dish);
             });
         });
     }
@@ -42,15 +47,29 @@ class Dish {
             allergy_advice: _allergy_advice,
             price: _price,
             type: _type,
-            available: _available
+            available: (_available === "true") ? true : false
         }
         this.db.insert(entry, function(err, dish) {
             err ? console.log("[DEV] Error inserting dish", dish) : console.log("[DEV] Inserted dish", dish);
         });
     }
 
+    updateDish(id, _name, _ingredients, _allergy_advice, _price, _type, _available) {
+        var entry = {
+            name: _name,
+            ingredients: _ingredients,
+            allergy_advice: _allergy_advice,
+            price: _price,
+            type: _type,
+            available: (_available === "true") ? true : false
+        }
+        this.db.update({_id: id}, { $set: entry }, function(err, num) {
+            err ? console.log("[DEV] Error updating dish") : console.log("[DEV] Updated dish");
+        });
+    }
+
     avail(id, change) {
-        this.db.update({_id: id}, {$set: {available: change}}, function(err, num) {
+        this.db.update({_id: id}, { $set: {available: change} }, function(err, num) {
             if (err)
                 console.log("[DEV] Error making dish availability", change);
             else
